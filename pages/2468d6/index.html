@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>构建原理 | more than thing</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/Bloging/img/logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/mssui@0.1.13/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/mssui@0.1.17/lib/index.js"></script>
+    <meta name="description" content="记录生活,点滴成长">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/Bloging/assets/css/0.styles.510d14a0.css" as="style"><link rel="preload" href="/Bloging/assets/js/app.c4261130.js" as="script"><link rel="preload" href="/Bloging/assets/js/3.c6bedccc.js" as="script"><link rel="preload" href="/Bloging/assets/js/4.e9f87b89.js" as="script"><link rel="preload" href="/Bloging/assets/js/77.63777f74.js" as="script"><link rel="prefetch" href="/Bloging/assets/js/1.633ac0b2.js"><link rel="prefetch" href="/Bloging/assets/js/10.ac149612.js"><link rel="prefetch" href="/Bloging/assets/js/11.96ee3ed2.js"><link rel="prefetch" href="/Bloging/assets/js/12.2946f35c.js"><link rel="prefetch" href="/Bloging/assets/js/13.bc1f5e64.js"><link rel="prefetch" href="/Bloging/assets/js/14.c41bfe35.js"><link rel="prefetch" href="/Bloging/assets/js/15.2e233655.js"><link rel="prefetch" href="/Bloging/assets/js/16.b667ed44.js"><link rel="prefetch" href="/Bloging/assets/js/17.6d6c2140.js"><link rel="prefetch" href="/Bloging/assets/js/18.3b669922.js"><link rel="prefetch" href="/Bloging/assets/js/19.ba917f4c.js"><link rel="prefetch" href="/Bloging/assets/js/20.12e25c0c.js"><link rel="prefetch" href="/Bloging/assets/js/21.395f6b75.js"><link rel="prefetch" href="/Bloging/assets/js/22.6b0bc191.js"><link rel="prefetch" href="/Bloging/assets/js/23.633537ce.js"><link rel="prefetch" href="/Bloging/assets/js/24.a654d202.js"><link rel="prefetch" href="/Bloging/assets/js/25.c002b6c1.js"><link rel="prefetch" href="/Bloging/assets/js/26.6ab95da0.js"><link rel="prefetch" href="/Bloging/assets/js/27.72119c1d.js"><link rel="prefetch" href="/Bloging/assets/js/28.44045c08.js"><link rel="prefetch" href="/Bloging/assets/js/29.aaec54ac.js"><link rel="prefetch" href="/Bloging/assets/js/30.d9f7a3fd.js"><link rel="prefetch" href="/Bloging/assets/js/31.e1031ce7.js"><link rel="prefetch" href="/Bloging/assets/js/32.ae1d8bd8.js"><link rel="prefetch" href="/Bloging/assets/js/33.d98c75aa.js"><link rel="prefetch" href="/Bloging/assets/js/34.2d398343.js"><link rel="prefetch" href="/Bloging/assets/js/35.6ffec08d.js"><link rel="prefetch" href="/Bloging/assets/js/36.b2978254.js"><link rel="prefetch" href="/Bloging/assets/js/37.db8395aa.js"><link rel="prefetch" href="/Bloging/assets/js/38.2ad77037.js"><link rel="prefetch" href="/Bloging/assets/js/39.e371918c.js"><link rel="prefetch" href="/Bloging/assets/js/40.3c3d61cf.js"><link rel="prefetch" href="/Bloging/assets/js/41.c677792e.js"><link rel="prefetch" href="/Bloging/assets/js/42.41f9ed76.js"><link rel="prefetch" href="/Bloging/assets/js/43.e725e44e.js"><link rel="prefetch" href="/Bloging/assets/js/44.dff0f76b.js"><link rel="prefetch" href="/Bloging/assets/js/45.0842b596.js"><link rel="prefetch" href="/Bloging/assets/js/46.944f208a.js"><link rel="prefetch" href="/Bloging/assets/js/47.bb894d07.js"><link rel="prefetch" href="/Bloging/assets/js/48.63bb8fcf.js"><link rel="prefetch" href="/Bloging/assets/js/49.ec4ae786.js"><link rel="prefetch" href="/Bloging/assets/js/5.3839666a.js"><link rel="prefetch" href="/Bloging/assets/js/50.26888bab.js"><link rel="prefetch" href="/Bloging/assets/js/51.9154cf21.js"><link rel="prefetch" href="/Bloging/assets/js/52.67d87d91.js"><link rel="prefetch" href="/Bloging/assets/js/53.86ecd42a.js"><link rel="prefetch" href="/Bloging/assets/js/54.45818208.js"><link rel="prefetch" href="/Bloging/assets/js/55.b7627696.js"><link rel="prefetch" href="/Bloging/assets/js/56.509954e7.js"><link rel="prefetch" href="/Bloging/assets/js/57.7fbfa5b8.js"><link rel="prefetch" href="/Bloging/assets/js/58.4842b9e2.js"><link rel="prefetch" href="/Bloging/assets/js/59.9e45802d.js"><link rel="prefetch" href="/Bloging/assets/js/6.b6bfbe86.js"><link rel="prefetch" href="/Bloging/assets/js/60.c18b8b2f.js"><link rel="prefetch" href="/Bloging/assets/js/61.66d98eca.js"><link rel="prefetch" href="/Bloging/assets/js/62.80dceed7.js"><link rel="prefetch" href="/Bloging/assets/js/63.8fa4d8a2.js"><link rel="prefetch" href="/Bloging/assets/js/64.09c7cd5f.js"><link rel="prefetch" href="/Bloging/assets/js/65.524a29c2.js"><link rel="prefetch" href="/Bloging/assets/js/66.08f1858f.js"><link rel="prefetch" href="/Bloging/assets/js/67.f122702d.js"><link rel="prefetch" href="/Bloging/assets/js/68.a2ed4427.js"><link rel="prefetch" href="/Bloging/assets/js/69.0cdc5e77.js"><link rel="prefetch" href="/Bloging/assets/js/7.a453afda.js"><link rel="prefetch" href="/Bloging/assets/js/70.b31e993a.js"><link rel="prefetch" href="/Bloging/assets/js/71.7ee1e188.js"><link rel="prefetch" href="/Bloging/assets/js/72.a70b3a22.js"><link rel="prefetch" href="/Bloging/assets/js/73.3ff1f64e.js"><link rel="prefetch" href="/Bloging/assets/js/74.9a88e40a.js"><link rel="prefetch" href="/Bloging/assets/js/75.bf77b027.js"><link rel="prefetch" href="/Bloging/assets/js/76.46bea7b5.js"><link rel="prefetch" href="/Bloging/assets/js/78.f1385a46.js"><link rel="prefetch" href="/Bloging/assets/js/79.79c97871.js"><link rel="prefetch" href="/Bloging/assets/js/8.9cc97f72.js"><link rel="prefetch" href="/Bloging/assets/js/80.4e46cce8.js"><link rel="prefetch" href="/Bloging/assets/js/81.d11e0754.js"><link rel="prefetch" href="/Bloging/assets/js/82.bd6b5685.js"><link rel="prefetch" href="/Bloging/assets/js/83.fed59d92.js"><link rel="prefetch" href="/Bloging/assets/js/84.1eda6b7d.js"><link rel="prefetch" href="/Bloging/assets/js/85.75329cd2.js"><link rel="prefetch" href="/Bloging/assets/js/86.29154bf3.js"><link rel="prefetch" href="/Bloging/assets/js/87.a70eae9d.js"><link rel="prefetch" href="/Bloging/assets/js/88.19afe6e3.js"><link rel="prefetch" href="/Bloging/assets/js/89.7ea44365.js"><link rel="prefetch" href="/Bloging/assets/js/9.c09ab2ad.js"><link rel="prefetch" href="/Bloging/assets/js/90.d5693b90.js"><link rel="prefetch" href="/Bloging/assets/js/91.c1716325.js"><link rel="prefetch" href="/Bloging/assets/js/92.ce1dccbf.js"><link rel="prefetch" href="/Bloging/assets/js/93.bbe12eb1.js"><link rel="prefetch" href="/Bloging/assets/js/94.4d792677.js"><link rel="prefetch" href="/Bloging/assets/js/95.a97699a2.js"><link rel="prefetch" href="/Bloging/assets/js/96.7ae0a659.js"><link rel="prefetch" href="/Bloging/assets/js/97.f2a9c5cc.js">
+    <link rel="stylesheet" href="/Bloging/assets/css/0.styles.510d14a0.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Bloging/" class="home-link router-link-active"><img src="/Bloging/img/logo.png" alt="more than thing" class="logo"> <span class="site-name can-hide">more than thing</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Bloging/" class="nav-link firstMenu-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面杂谈" class="dropdown-title"><a href="/Bloging/pages/7f4764/" class="link-title">页面杂谈</a> <span class="title" style="display:none;">页面杂谈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/e42f0c/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/ef83a2/" class="nav-link">CSS</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/c13c31/" class="nav-link">JavaScript</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/76f4b0/" class="nav-link">TypeScript</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><a href="/Bloging/pages/a787e4/" class="link-title">框架</a> <span class="title" style="display:none;">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/bb33b9/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/ddcd99/" class="nav-link">React</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端延展" class="dropdown-title"><a href="/Bloging/pages/a9e92d" class="link-title">前端延展</a> <span class="title" style="display:none;">前端延展</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/d1fdc6/" class="nav-link">前端安全</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/c926f9/" class="nav-link">微信相关</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/b79286/" class="nav-link">Webpack</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/dcb6ce/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学无止境" class="dropdown-title"><a href="/Bloging/pages/e46525/" class="link-title">学无止境</a> <span class="title" style="display:none;">学无止境</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/46e3e9/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/1/" class="nav-link">Java</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/2/" class="nav-link">Python</a></li></ul></div></div><div class="nav-item"><a href="/Bloging/pages/fcc60b/" class="nav-link firstMenu-link">闲暇之余</a></div> <a href="https://github.com/zhouyalongs/zhouyalongs.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+      GitHub
+      <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/MssText/learn@master/images/49203535.35emn5vryma0.png"> <div class="blogger-info"><h3>zhouyalong</h3> <span>会当凌绝顶,一览众山小</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/Bloging/" class="nav-link firstMenu-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面杂谈" class="dropdown-title"><a href="/Bloging/pages/7f4764/" class="link-title">页面杂谈</a> <span class="title" style="display:none;">页面杂谈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/e42f0c/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/ef83a2/" class="nav-link">CSS</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/c13c31/" class="nav-link">JavaScript</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/76f4b0/" class="nav-link">TypeScript</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架" class="dropdown-title"><a href="/Bloging/pages/a787e4/" class="link-title">框架</a> <span class="title" style="display:none;">框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/bb33b9/" class="nav-link">Vue</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/ddcd99/" class="nav-link">React</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端延展" class="dropdown-title"><a href="/Bloging/pages/a9e92d" class="link-title">前端延展</a> <span class="title" style="display:none;">前端延展</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/d1fdc6/" class="nav-link">前端安全</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/c926f9/" class="nav-link">微信相关</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/b79286/" class="nav-link">Webpack</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/dcb6ce/" class="nav-link">Node</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学无止境" class="dropdown-title"><a href="/Bloging/pages/e46525/" class="link-title">学无止境</a> <span class="title" style="display:none;">学无止境</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Bloging/pages/46e3e9/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/1/" class="nav-link">Java</a></li><li class="dropdown-item"><!----> <a href="/Bloging/pages/2/" class="nav-link">Python</a></li></ul></div></div><div class="nav-item"><a href="/Bloging/pages/fcc60b/" class="nav-link firstMenu-link">闲暇之余</a></div> <a href="https://github.com/zhouyalongs/zhouyalongs.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+      GitHub
+      <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端安全</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>微信相关</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Webpack</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Bloging/pages/686027/" class="sidebar-link">基本配置</a></li><li><a href="/Bloging/pages/04eccd/" class="sidebar-link">postcss</a></li><li><a href="/Bloging/pages/ace89b/" class="sidebar-link">babelrc</a></li><li><a href="/Bloging/pages/39d730/" class="sidebar-link">优化</a></li><li><a href="/Bloging/pages/2468d6/" aria-current="page" class="active sidebar-link">构建原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Bloging/pages/2468d6/#webpack-编译过程" class="sidebar-link">webpack 编译过程</a></li><li class="sidebar-sub-header"><a href="/Bloging/pages/2468d6/#简易版本" class="sidebar-link">简易版本</a></li><li class="sidebar-sub-header"><a href="/Bloging/pages/2468d6/#构建流程" class="sidebar-link">构建流程</a></li><li class="sidebar-sub-header"><a href="/Bloging/pages/2468d6/#手写一个loader" class="sidebar-link">手写一个loader</a></li><li class="sidebar-sub-header"><a href="/Bloging/pages/2468d6/#手写一个plugin" class="sidebar-link">手写一个plugin</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Node</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-783bcf04><div class="articleInfo" data-v-783bcf04><ul class="breadcrumbs" data-v-783bcf04><li data-v-783bcf04><a href="/Bloging/" title="首页" class="iconfont icon-home router-link-active" data-v-783bcf04></a></li> <li data-v-783bcf04><a href="/Bloging/pages/a9e92d/" title="前端延展-目录页" data-v-783bcf04>前端延展</a></li> <li data-v-783bcf04><a href="/Bloging/pages/a9e92d/#Webpack" title="前端延展#Webpack" data-v-783bcf04>Webpack</a></li> <!----></ul> <div class="info" data-v-783bcf04><div title="作者" class="author iconfont icon-touxiang" data-v-783bcf04><a href="https://github.com/zhouyalongs" target="_blank" title="作者" class="beLink" data-v-783bcf04>zhouyalong</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-783bcf04><a href="javascript:;" data-v-783bcf04>2022-01-29</a></div> <!----> <div class="date iconfont icon-yuedu" data-v-783bcf04><span data-v-783bcf04>时间 4分钟</span></div> <div id="/pages/2468d6/" data-flag-title="构建原理" class="leancloud_visitors date iconfont icon-eye" data-v-783bcf04><span class="post-meta-item-text" data-v-783bcf04>阅读量 </span> <span class="leancloud-visitors-count" data-v-783bcf04>0</span></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+            构建原理
+          </h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="webpack-编译过程"><a href="#webpack-编译过程" class="header-anchor">#</a> webpack 编译过程</h2> <ul><li><p>接受一份配置webpack.config.js</p></li> <li><p>分析出入口模块的位置</p> <div class="language- extra-class"><pre><code>* 读取入口模块的内容,分析内容
+* 哪些是依赖
+* 哪些是源码
+
+      * es6,jsx处理需要编译成浏览器能够执行
+* 分析其他模块
+</code></pre></div></li> <li><p>拿到对象的数据结构</p> <div class="language- extra-class"><pre><code>* 模块路径
+* 处理好内容
+</code></pre></div></li> <li><p>创建bundle.js
+* 启动器函数,来补充代码里可能出现的 module exports require,让浏览器能够顺利的执行</p></li> <li><p>创建bundle.js</p></li></ul> <h2 id="简易版本"><a href="#简易版本" class="header-anchor">#</a> 简易版本</h2> <div class="language- extra-class"><pre><code>```js
+// webpack.js
+const fs = require(&quot;fs&quot;)
+const path = require(&quot;path&quot;)
+const parser = require('@babel/parser')
+const traverse = require('@babel/traverse').default
+
+const { transformFromAst } = require(&quot;@babel/core&quot;)
+
+module.exports = class Webpack {
+  constructor(option){
+    const { entry, output } = option
+    this.entry =entry
+    this.output =output
+    this.modules = []
+  }
+  run(){
+    // 拿到入口模块的内容
+    const info = this.parse(this.entry)
+    // 递归分析其他文件
+    this.modules.push(info)
+    for (let i = 0; i &lt;  this.modules.length; i++) {
+      const module =  this.modules[i];
+      const { dependencies } = module
+      if(dependencies) {
+        for (const key in dependencies) {
+          const dependenciesInfo =  this.parse(dependencies[key])
+          this.modules.push(this.parse(dependencies[key]))
+        }
+      }
+    }
+
+    const obj = {}
+    this.modules.forEach( item =&gt; {
+      obj[item.entryFile] = {
+        dependencies : item.dependencies,
+        code :item.code
+      }
+    })
+
+    this.file(obj)
+  }
+  parse(entryFile){
+    const content = fs.readFileSync(entryFile, &quot;utf-8&quot;)
+    // 生成ast 抽象语法数
+    let ast = parser.parse(content, {
+      sourceType: &quot;module&quot;
+    })
+    // 保存路径
+    const dependencies = {}
+    traverse(ast, {
+      // 遍历此类的节点
+      ImportDeclaration({node}){
+        // node.source.value 引入模块的相对路径
+        // path.dirname(entryFile) 相对项目的根路径
+        let pathName = path.join( path.dirname(entryFile), node.source.value)
+        dependencies[node.source.value] = pathName
+      }
+    })
+    const { code } = transformFromAst(ast, null, {
+      presets: [&quot;@babel/preset-env&quot;]
+    })
+    // code
+    // &quot;use strict&quot;;
+    // var _a = _interopRequireDefault(require(&quot;./a.js&quot;));
+    // function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { &quot;default&quot;: obj }; }
+    return {
+      entryFile,
+      dependencies,
+      code
+    }
+  }
+
+  file(code) {
+    // 创建自运行函数, 处理 require, module, exports
+    // 生成main.js 放到 dist目录下
+    let filePath = path.join( this.output.path,this.output.filename)
+    const stringCode = JSON.stringify(code)
+    const bundle = `(
+      function (graph){
+        function require(module){
+          function _require( _path ){
+            return require(graph[module].dependencies[_path])
+          }
+          var exports = {};
+          (function(require, exports, modulecode){
+            eval(modulecode)
+          })(_require, exports, graph[module].code)
+        }
+        require('${this.entry}')
+      })(${stringCode})`
+
+    fs.writeFileSync(filePath, bundle, 'utf-8')
+  }
+}
+
+// bundle.js
+const config = require(&quot;./webpack.config&quot;)
+const Webpack = require(&quot;./lib/webpack&quot;)
+new Webpack(config).run()
+```
+</code></pre></div><h2 id="构建流程"><a href="#构建流程" class="header-anchor">#</a> 构建流程</h2> <p>webpack 的运行流程是一个串行的过程，从启动到结束会依次执行以下流程：</p> <ul><li>初始化参数：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数；</li> <li>开始编译：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译；</li> <li>确定入口：根据配置中的 entry 找出所有的入口文件</li> <li>编译模块：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理；</li> <li>完成模块编译：在经过第4步使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系；</li> <li>输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会；</li> <li>输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统。</li> <li>在以上过程中，webpack 会在特定的时间点广播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并且插件可以调用 webpack 提供的 API 改变 webpack 的运行结果。</li></ul> <h2 id="手写一个loader"><a href="#手写一个loader" class="header-anchor">#</a> 手写一个loader</h2> <p>Loader就是一个函数,拿到模块内容进行转换</p> <div class="language- extra-class"><pre><code>```js
+  // webpack.config.js
+  // 指定loader寻找的目录
+  resolveLoader: {
+    modules: ['node_modules', './myloader']
+  }
+
+  module.exports = function (source, ast, map) {
+    // this
+    //  this.query拿到外部传入的参数
+    console.log(this, this.query, source)
+
+    return source.replace('loader', 'webpack')
+    // callback，我们看上面的代码，只是返回了一个替换后的结果，想返回其他值的话，我们就需要用到callback了
+    // this.callback(
+    //   err: Error | null, // 错误信息
+    //   content: string | Buffer, // 最终生成的源码
+    //   sourceMap?: SourceMap, // 对应的sourcemap
+    //   meta?: any // 其他额外的信息
+    // );
+    // 异步 传递给下一个loader  最后一个loader要有return
+     const callback = this.async()
+    setTimeout(() =&gt; {
+        const result = source.replace('loader', options.name)
+        // this.callback(null, result)
+        callback(null, result) // 实际上为this.callback
+    }, 1000)
+  }
+```
+</code></pre></div><h2 id="手写一个plugin"><a href="#手写一个plugin" class="header-anchor">#</a> 手写一个plugin</h2> <p>在webpack运行的声明周期中会广播许多事件，plugin可以监听这些事件，在特定的时刻调用webpack提供的API执行相应的操作。webpack在打包前会去调用所有插件的apply方法</p> <div class="language- extra-class"><pre><code>```js
+class firstPlugin {
+  constructor (options) {
+    console.log('firstPlugin options', options)
+  }
+  apply (compiler) {
+    compiler.plugin('done', compilation =&gt; {
+      console.log('firstPlugin')
+    ))
+  }
+}
+
+module.exports = firstPlugin
+```
+</code></pre></div><ul><li>compiler 对象包含了 Webpack 环境所有的的配置信息。这个对象在启动 webpack 时被一次性建立，并配置好所有可操作的设置，包括 options，loader 和 plugin。当在 webpack 环境中应用一个插件时，插件将收到此 compiler 对象的引用。可以使用它来访问 webpack 的主环境。</li> <li>compilation对象包含了当前的模块资源、编译生成资源、变化的文件等。当运行webpack 开发环境中间件时，每当检测到一个文件变化，就会创建一个新的 compilation，从而生成一组新的编译资源。compilation 对象也提供了很多关键时机的回调，以供插件做自定义处理时选择使用。</li></ul></div></div> <!----> <div class="page-edit"><div class="edit-link"><a href="https://github.com/zhouyalongs/zhouyalongs.github.io/edit/master/docs/03.前端延展/03.Webpack/05.原理.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="tags"><a href="/Bloging/tags/?tag=%E6%9E%84%E5%BB%BA%E5%8E%9F%E7%90%86" title="标签">#构建原理</a></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/02/21, 10:26:07</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/Bloging/pages/39d730/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">优化</div></a> <a href="/Bloging/pages/dcb6ce/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">node基本使用</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+          ←
+          <a href="/Bloging/pages/39d730/" class="prev">优化</a></span> <span class="next"><a href="/Bloging/pages/dcb6ce/">node基本使用</a>→
+        </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/Bloging/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/Bloging/pages/2c67da/"><div>全家桶</div></a> <span>07-07</span></dt></dl><dl><dd>02</dd> <dt><a href="/Bloging/pages/dff97d/"><div>进阶部分</div></a> <span>07-07</span></dt></dl><dl><dd>03</dd> <dt><a href="/Bloging/pages/677c18/"><div>基础部分</div></a> <span>07-07</span></dt></dl> <dl><dd></dd> <dt><a href="/Bloging/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <!----> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">跟随系统</li><li class="iconfont icon-rijianmoshi">浅色模式</li><li class="iconfont icon-yejianmoshi">深色模式</li><li class="iconfont icon-yuedu">阅读模式</li></ul></div> <div title="选择主题色" class="button blur theme-mode-but iconfont icon-qiehuan"><ul class="select-box" style="display:none;"><li class="iconfont"><sub class="theme-select-block" style="background-color:#3eaf7c;"></sub> <span>生命绿</span></li><li class="iconfont"><sub class="theme-select-block" style="background-color:#D59C12;"></sub> <span>收获黄</span></li><li class="iconfont"><sub class="theme-select-block" style="background-color:#3498DB;"></sub> <span>天空蓝</span></li><li class="iconfont"><sub class="theme-select-block" style="background-color:#E74C3C;"></sub> <span>激情红</span></li><li class="iconfont"><sub class="theme-select-block" style="background-color:#8e44ad;"></sub> <span>高贵紫</span></li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"><div></div></div></div>
+    <script src="/Bloging/assets/js/app.c4261130.js" defer></script><script src="/Bloging/assets/js/3.c6bedccc.js" defer></script><script src="/Bloging/assets/js/4.e9f87b89.js" defer></script><script src="/Bloging/assets/js/77.63777f74.js" defer></script>
+  </body>
+</html>
